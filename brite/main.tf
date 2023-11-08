@@ -8,19 +8,28 @@ resource "google_cloud_run_v2_service" "cloudrun-service-brite" {
   template {
     volumes {
       name = "cloudsql"
+      # connect Cloud SQL and Cloud Run
       cloud_sql_instance {
         instances = ["${var.mysql_conn_name}"]
       }
     }
 
     containers {
-      image = "srikanthreddypailla/learning:britetest1"
+      image = var.britetest_docker_image
       ports {
         container_port = 8000
       }
       env {
+        name  = "DB_USER"
+        value = var.db_user
+      }
+      env {
         name  = "DB_PASS"
         value = var.db_pass
+      }
+      env {
+        name  = "TABLE_NAME"
+        value = var.db_table_name
       }
       env {
         name  = "INSTANCE_UNIX_SOCKET"
