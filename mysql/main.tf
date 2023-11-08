@@ -1,3 +1,4 @@
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#example-usage
 resource "google_sql_database_instance" "britetest-instance" {
   name             = "britetest-instance"
   region           = var.region
@@ -20,3 +21,6 @@ resource "google_sql_user" "britetest-user" {
   password = "britetest"
 }
 
+output "cloud_sql_instance_connection_name" {
+  value = google_sql_database_instance.britetest-instance.connection_name
+}

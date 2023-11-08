@@ -20,3 +20,15 @@ module "mysql" {
   region = var.region
 }
 
+
+module "brite" {
+  source          = "./brite"
+  region          = var.region
+  project         = var.project-id
+  db_pass         = var.db_pass
+  omdb_api_key    = var.omdb_api_key
+  mysql_conn_name = module.mysql.cloud_sql_instance_connection_name
+
+  # create brite resources only after mysql instance is created
+  depends_on = [module.mysql]
+}
