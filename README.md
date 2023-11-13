@@ -23,7 +23,7 @@ Deployment:
 From root of the repo run below commands
 1. `terraform init`
 2. `terraform plan`
-3. `terraform apply`  : This will take aprox 15 mins (Creating CloudSQL take the most of the time)
+3. `terraform apply`  : This will take aprox 15 mins (Creating CloudSQL takes the most of the time)
 
 Once deployment is successful, go to GCP console and then go to the CloudRun service, in the service details
 you will find the url, which when you open will direct to FastAPI Swagger UI.
