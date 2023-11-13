@@ -18,6 +18,8 @@ Pre-requisites before you deploy:
 2. In the repo root create keys.json file which should contain service accout keys.
    Refer https://cloud.google.com/iam/docs/keys-create-delete on how to create service account and get keys
 
+3. Generate OMDB API key from https://www.omdbapi.com/apikey.aspx, you will need this key when you run terraform apply
+
 
 Deployment:
 From root of the repo run below commands

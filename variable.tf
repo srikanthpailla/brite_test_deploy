@@ -34,5 +34,5 @@ variable "omdb_api_key" {
 
 variable "britetest_docker_image" {
   type    = string
-  default = "srikanthreddypailla/learning:britetest1"
+  default = "srikanthreddypailla/learning:1.0.0"
 }
